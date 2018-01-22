@@ -1,0 +1,35 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "0215391b9f7a4166db252f8ca9d3e3c4d9b2b50ecc7e74cc47c1d42c32ed89d3fca917fddd13e16faee25d9f052030d3c9c10418e2c8e0c3273bc24942ac48465fa1ace983cdd7fc49973955c730aa525567fe8328ee16dbe03c319b0e5b5a9fad55a6b97b044d3f31ad1de12ddacdc21a7d54fb48436d0be6a7568d725f4b1237bfc7c8c6620be974d19d864946a0afa2acf4e8fe3c2f8122db698555584f3dadea75a8b957ac1895ac4f8616c05377b64f58248bda001ed452ce9c73d6119c40d7742a80a3a4439ec949c0e2c841440fd2a09555d02f0e13e6c8c659c9b52a0516c4f2bc7790e0d55b3a169abd1a60d87a435a12f6e72fe4f401849d1d5436",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mysql": "mysql://root:@localhost:3306/apiecommercebatik",
+  "mongodb": "mongodb://localhost:27017/apiecommercebatik"
+}
